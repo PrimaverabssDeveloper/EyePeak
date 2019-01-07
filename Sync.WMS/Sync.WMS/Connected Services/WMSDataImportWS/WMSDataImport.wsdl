@@ -1,0 +1,1025 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WMSDataImport" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetNamedPipeBinding_IWMSDataImport_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsam:Addressing>
+          <wsp:Policy>
+            <wsam:AnonymousResponses />
+          </wsp:Policy>
+        </wsam:Addressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://amacedo:9999/WMSDataImport?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://amacedo:9999/WMSDataImport?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://amacedo:9999/WMSDataImport?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" />
+      <xsd:import schemaLocation="http://amacedo:9999/WMSDataImport?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" />
+      <xsd:import schemaLocation="http://amacedo:9999/WMSDataImport?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://amacedo:9999/WMSDataImport?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/GlobalSist.Logic.DocLogic" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWMSDataImport_Version_InputMessage">
+    <wsdl:part name="parameters" element="tns:Version" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_Version_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_SaveEntity_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveEntity" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_SaveEntity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_DeleteEntity_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEntity" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_DeleteEntity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_SaveSKU_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSKU" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_SaveSKU_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSKUResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_DeleteSKU_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSKU" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_DeleteSKU_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSKUResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_SaveDoc_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDoc" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_SaveDoc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_CreatePicking_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePicking" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_CreatePicking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePickingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_CreatePickingByContainer_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePickingByContainer" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_CreatePickingByContainer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePickingByContainerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_SaveAssemblyDoc_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAssemblyDoc" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_SaveAssemblyDoc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAssemblyDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_SaveProductionDocs_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProductionDocs" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_SaveProductionDocs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProductionDocsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_SaveSingleProductionDoc_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSingleProductionDoc" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_SaveSingleProductionDoc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSingleProductionDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_UpdateProductionDoc_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductionDoc" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_UpdateProductionDoc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductionDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_CloseProductionDocs_InputMessage">
+    <wsdl:part name="parameters" element="tns:CloseProductionDocs" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_CloseProductionDocs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CloseProductionDocsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_DeleteDoc_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDoc" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_DeleteDoc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_SaveWarehouse_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveWarehouse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_SaveWarehouse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveWarehouseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_DeleteWarehouse_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteWarehouse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_DeleteWarehouse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteWarehouseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_SaveDocDefinition_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDocDefinition" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_SaveDocDefinition_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDocDefinitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_DeleteDocDefinition_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDocDefinition" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_DeleteDocDefinition_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDocDefinitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_SaveGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveGroup" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_SaveGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_DeleteGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGroup" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_DeleteGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_SaveClass_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveClass" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_SaveClass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_DeleteClass_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteClass" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_DeleteClass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_SaveOperator_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOperator" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_SaveOperator_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOperatorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_CloseDoc_InputMessage">
+    <wsdl:part name="parameters" element="tns:CloseDoc" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_CloseDoc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CloseDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_SaveCompany_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCompany" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_SaveCompany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_GetSkuStock_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSkuStock" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_GetSkuStock_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSkuStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_GetStockOnLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStockOnLocation" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_GetStockOnLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStockOnLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_BlockContainer_InputMessage">
+    <wsdl:part name="parameters" element="tns:BlockContainer" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_BlockContainer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BlockContainerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_UnBlockContainer_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnBlockContainer" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_UnBlockContainer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnBlockContainerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_GetDocList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocList" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_GetDocList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_GetDocListWithDivergencies_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocListWithDivergencies" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_GetDocListWithDivergencies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocListWithDivergenciesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_EditDocID_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditDocID" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_EditDocID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditDocIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_ListContainerMovements_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListContainerMovements" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_ListContainerMovements_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListContainerMovementsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_CreateProductionStockMovement_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProductionStockMovement" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_CreateProductionStockMovement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProductionStockMovementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_TransferStockToNewContainer_InputMessage">
+    <wsdl:part name="parameters" element="tns:TransferStockToNewContainer" />
+  </wsdl:message>
+  <wsdl:message name="IWMSDataImport_TransferStockToNewContainer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TransferStockToNewContainerResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWMSDataImport">
+    <wsdl:operation name="Version">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/Version" message="tns:IWMSDataImport_Version_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/VersionResponse" message="tns:IWMSDataImport_Version_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveEntity">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/SaveEntity" message="tns:IWMSDataImport_SaveEntity_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/SaveEntityResponse" message="tns:IWMSDataImport_SaveEntity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEntity">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/DeleteEntity" message="tns:IWMSDataImport_DeleteEntity_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/DeleteEntityResponse" message="tns:IWMSDataImport_DeleteEntity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSKU">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/SaveSKU" message="tns:IWMSDataImport_SaveSKU_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/SaveSKUResponse" message="tns:IWMSDataImport_SaveSKU_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSKU">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/DeleteSKU" message="tns:IWMSDataImport_DeleteSKU_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/DeleteSKUResponse" message="tns:IWMSDataImport_DeleteSKU_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDoc">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/SaveDoc" message="tns:IWMSDataImport_SaveDoc_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/SaveDocResponse" message="tns:IWMSDataImport_SaveDoc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePicking">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/CreatePicking" message="tns:IWMSDataImport_CreatePicking_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/CreatePickingResponse" message="tns:IWMSDataImport_CreatePicking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePickingByContainer">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/CreatePickingByContainer" message="tns:IWMSDataImport_CreatePickingByContainer_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/CreatePickingByContainerResponse" message="tns:IWMSDataImport_CreatePickingByContainer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAssemblyDoc">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/SaveAssemblyDoc" message="tns:IWMSDataImport_SaveAssemblyDoc_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/SaveAssemblyDocResponse" message="tns:IWMSDataImport_SaveAssemblyDoc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProductionDocs">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/SaveProductionDocs" message="tns:IWMSDataImport_SaveProductionDocs_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/SaveProductionDocsResponse" message="tns:IWMSDataImport_SaveProductionDocs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSingleProductionDoc">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/SaveSingleProductionDoc" message="tns:IWMSDataImport_SaveSingleProductionDoc_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/SaveSingleProductionDocResponse" message="tns:IWMSDataImport_SaveSingleProductionDoc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductionDoc">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/UpdateProductionDoc" message="tns:IWMSDataImport_UpdateProductionDoc_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/UpdateProductionDocResponse" message="tns:IWMSDataImport_UpdateProductionDoc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseProductionDocs">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/CloseProductionDocs" message="tns:IWMSDataImport_CloseProductionDocs_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/CloseProductionDocsResponse" message="tns:IWMSDataImport_CloseProductionDocs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDoc">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/DeleteDoc" message="tns:IWMSDataImport_DeleteDoc_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/DeleteDocResponse" message="tns:IWMSDataImport_DeleteDoc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveWarehouse">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/SaveWarehouse" message="tns:IWMSDataImport_SaveWarehouse_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/SaveWarehouseResponse" message="tns:IWMSDataImport_SaveWarehouse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWarehouse">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/DeleteWarehouse" message="tns:IWMSDataImport_DeleteWarehouse_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/DeleteWarehouseResponse" message="tns:IWMSDataImport_DeleteWarehouse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDocDefinition">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/SaveDocDefinition" message="tns:IWMSDataImport_SaveDocDefinition_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/SaveDocDefinitionResponse" message="tns:IWMSDataImport_SaveDocDefinition_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDocDefinition">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/DeleteDocDefinition" message="tns:IWMSDataImport_DeleteDocDefinition_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/DeleteDocDefinitionResponse" message="tns:IWMSDataImport_DeleteDocDefinition_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveGroup">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/SaveGroup" message="tns:IWMSDataImport_SaveGroup_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/SaveGroupResponse" message="tns:IWMSDataImport_SaveGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGroup">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/DeleteGroup" message="tns:IWMSDataImport_DeleteGroup_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/DeleteGroupResponse" message="tns:IWMSDataImport_DeleteGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveClass">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/SaveClass" message="tns:IWMSDataImport_SaveClass_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/SaveClassResponse" message="tns:IWMSDataImport_SaveClass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteClass">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/DeleteClass" message="tns:IWMSDataImport_DeleteClass_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/DeleteClassResponse" message="tns:IWMSDataImport_DeleteClass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveOperator">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/SaveOperator" message="tns:IWMSDataImport_SaveOperator_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/SaveOperatorResponse" message="tns:IWMSDataImport_SaveOperator_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseDoc">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/CloseDoc" message="tns:IWMSDataImport_CloseDoc_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/CloseDocResponse" message="tns:IWMSDataImport_CloseDoc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCompany">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/SaveCompany" message="tns:IWMSDataImport_SaveCompany_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/SaveCompanyResponse" message="tns:IWMSDataImport_SaveCompany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSkuStock">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/GetSkuStock" message="tns:IWMSDataImport_GetSkuStock_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/GetSkuStockResponse" message="tns:IWMSDataImport_GetSkuStock_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStockOnLocation">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/GetStockOnLocation" message="tns:IWMSDataImport_GetStockOnLocation_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/GetStockOnLocationResponse" message="tns:IWMSDataImport_GetStockOnLocation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BlockContainer">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/BlockContainer" message="tns:IWMSDataImport_BlockContainer_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/BlockContainerResponse" message="tns:IWMSDataImport_BlockContainer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnBlockContainer">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/UnBlockContainer" message="tns:IWMSDataImport_UnBlockContainer_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/UnBlockContainerResponse" message="tns:IWMSDataImport_UnBlockContainer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocList">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/GetDocList" message="tns:IWMSDataImport_GetDocList_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/GetDocListResponse" message="tns:IWMSDataImport_GetDocList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocListWithDivergencies">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/GetDocListWithDivergencies" message="tns:IWMSDataImport_GetDocListWithDivergencies_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/GetDocListWithDivergenciesResponse" message="tns:IWMSDataImport_GetDocListWithDivergencies_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditDocID">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/EditDocID" message="tns:IWMSDataImport_EditDocID_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/EditDocIDResponse" message="tns:IWMSDataImport_EditDocID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListContainerMovements">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/ListContainerMovements" message="tns:IWMSDataImport_ListContainerMovements_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/ListContainerMovementsResponse" message="tns:IWMSDataImport_ListContainerMovements_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateProductionStockMovement">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/CreateProductionStockMovement" message="tns:IWMSDataImport_CreateProductionStockMovement_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/CreateProductionStockMovementResponse" message="tns:IWMSDataImport_CreateProductionStockMovement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TransferStockToNewContainer">
+      <wsdl:input wsam:Action="http://tempuri.org/IWMSDataImport/TransferStockToNewContainer" message="tns:IWMSDataImport_TransferStockToNewContainer_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IWMSDataImport/TransferStockToNewContainerResponse" message="tns:IWMSDataImport_TransferStockToNewContainer_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IWMSDataImport" type="tns:IWMSDataImport">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Version">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/Version" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveEntity">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/SaveEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEntity">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/DeleteEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSKU">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/SaveSKU" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSKU">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/DeleteSKU" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDoc">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/SaveDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePicking">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/CreatePicking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePickingByContainer">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/CreatePickingByContainer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAssemblyDoc">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/SaveAssemblyDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProductionDocs">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/SaveProductionDocs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSingleProductionDoc">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/SaveSingleProductionDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductionDoc">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/UpdateProductionDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseProductionDocs">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/CloseProductionDocs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDoc">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/DeleteDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveWarehouse">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/SaveWarehouse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWarehouse">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/DeleteWarehouse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDocDefinition">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/SaveDocDefinition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDocDefinition">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/DeleteDocDefinition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveGroup">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/SaveGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGroup">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/DeleteGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveClass">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/SaveClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteClass">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/DeleteClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveOperator">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/SaveOperator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseDoc">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/CloseDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCompany">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/SaveCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSkuStock">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/GetSkuStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStockOnLocation">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/GetStockOnLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BlockContainer">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/BlockContainer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnBlockContainer">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/UnBlockContainer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocList">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/GetDocList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocListWithDivergencies">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/GetDocListWithDivergencies" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditDocID">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/EditDocID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListContainerMovements">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/ListContainerMovements" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateProductionStockMovement">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/CreateProductionStockMovement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransferStockToNewContainer">
+      <soap:operation soapAction="http://tempuri.org/IWMSDataImport/TransferStockToNewContainer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetNamedPipeBinding_IWMSDataImport" type="tns:IWMSDataImport">
+    <wsp:PolicyReference URI="#NetNamedPipeBinding_IWMSDataImport_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/named-pipe" />
+    <wsdl:operation name="Version">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/Version" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveEntity">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/SaveEntity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEntity">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/DeleteEntity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSKU">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/SaveSKU" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSKU">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/DeleteSKU" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDoc">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/SaveDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePicking">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/CreatePicking" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePickingByContainer">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/CreatePickingByContainer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAssemblyDoc">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/SaveAssemblyDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProductionDocs">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/SaveProductionDocs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSingleProductionDoc">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/SaveSingleProductionDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductionDoc">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/UpdateProductionDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseProductionDocs">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/CloseProductionDocs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDoc">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/DeleteDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveWarehouse">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/SaveWarehouse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteWarehouse">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/DeleteWarehouse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDocDefinition">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/SaveDocDefinition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDocDefinition">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/DeleteDocDefinition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveGroup">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/SaveGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGroup">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/DeleteGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveClass">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/SaveClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteClass">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/DeleteClass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveOperator">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/SaveOperator" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseDoc">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/CloseDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCompany">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/SaveCompany" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSkuStock">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/GetSkuStock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStockOnLocation">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/GetStockOnLocation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BlockContainer">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/BlockContainer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnBlockContainer">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/UnBlockContainer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocList">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/GetDocList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocListWithDivergencies">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/GetDocListWithDivergencies" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditDocID">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/EditDocID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListContainerMovements">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/ListContainerMovements" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateProductionStockMovement">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/CreateProductionStockMovement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransferStockToNewContainer">
+      <soap12:operation soapAction="http://tempuri.org/IWMSDataImport/TransferStockToNewContainer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WMSDataImport">
+    <wsdl:port name="BasicHttpBinding_IWMSDataImport" binding="tns:BasicHttpBinding_IWMSDataImport">
+      <soap:address location="http://amacedo:9999/WMSDataImport" />
+    </wsdl:port>
+    <wsdl:port name="NetNamedPipeBinding_IWMSDataImport" binding="tns:NetNamedPipeBinding_IWMSDataImport">
+      <soap12:address location="net.pipe://localhost/WMSDataImport" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.pipe://localhost/WMSDataImport</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

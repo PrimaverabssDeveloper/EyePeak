@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://amacedo:9999/WMSDataImport?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" />
+  <xs:import schemaLocation="http://amacedo:9999/WMSDataImport?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" />
+  <xs:element name="Version">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VersionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VersionResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveEntity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q1:EntityRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveEntityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="SaveEntityResult" nillable="true" type="q2:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEntity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q3:EntityRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteEntityResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="DeleteEntityResult" nillable="true" type="q4:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveSKU">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q5:SKURequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveSKUResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="SaveSKUResult" nillable="true" type="q6:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSKU">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q7:SKURequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSKUResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="DeleteSKUResult" nillable="true" type="q8:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDoc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q9:DocRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDocResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="SaveDocResult" nillable="true" type="q10:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePicking">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q11:DocRequest" />
+        <xs:element minOccurs="0" name="DocId" type="xs:int" />
+        <xs:element minOccurs="0" name="LocationCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePickingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="CreatePickingResult" nillable="true" type="q12:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePickingByContainer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q13:DocRequest" />
+        <xs:element minOccurs="0" name="DocId" type="xs:int" />
+        <xs:element minOccurs="0" name="DocLine" type="xs:int" />
+        <xs:element minOccurs="0" name="ContainerCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreatePickingByContainerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="CreatePickingByContainerResult" nillable="true" type="q14:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveAssemblyDoc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q15:AssemblyDocRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveAssemblyDocResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="SaveAssemblyDocResult" nillable="true" type="q16:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveProductionDocs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q17:ProductionOrderRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveProductionDocsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="SaveProductionDocsResult" nillable="true" type="q18:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveSingleProductionDoc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q19:ProductionOrderRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveSingleProductionDocResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="SaveSingleProductionDocResult" nillable="true" type="q20:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProductionDoc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q21:ProductionOrderRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateProductionDocResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="UpdateProductionDocResult" nillable="true" type="q22:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CloseProductionDocs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q23:ProductionOrderRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CloseProductionDocsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="CloseProductionDocsResult" nillable="true" type="q24:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDoc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q25:DocRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDocResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="DeleteDocResult" nillable="true" type="q26:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveWarehouse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q27:WarehouseRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveWarehouseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="SaveWarehouseResult" nillable="true" type="q28:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteWarehouse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q29:WarehouseRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteWarehouseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="DeleteWarehouseResult" nillable="true" type="q30:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDocDefinition">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q31:DocDefinitionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDocDefinitionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="SaveDocDefinitionResult" nillable="true" type="q32:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDocDefinition">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q33:DocDefinitionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDocDefinitionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="DeleteDocDefinitionResult" nillable="true" type="q34:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q35:GroupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="SaveGroupResult" nillable="true" type="q36:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q37:GroupRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="DeleteGroupResult" nillable="true" type="q38:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveClass">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q39:ClassRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveClassResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="SaveClassResult" nillable="true" type="q40:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteClass">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q41:ClassRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteClassResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="DeleteClassResult" nillable="true" type="q42:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveOperator">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q43:OperatorsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveOperatorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="SaveOperatorResult" nillable="true" type="q44:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CloseDoc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q45:CloseDocRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CloseDocResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="CloseDocResult" nillable="true" type="q46:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCompany">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q47:CompanyRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCompanyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="SaveCompanyResult" nillable="true" type="q48:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSkuStock">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q49:SkuStockRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSkuStockResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="GetSkuStockResult" nillable="true" type="q50:ResultStock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStockOnLocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q51:SkuStockRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStockOnLocationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="GetStockOnLocationResult" nillable="true" type="q52:ResultStock" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BlockContainer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q53:ContainerRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BlockContainerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="BlockContainerResult" nillable="true" type="q54:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnBlockContainer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q55:ContainerRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnBlockContainerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="UnBlockContainerResult" nillable="true" type="q56:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q57:DocListRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="GetDocListResult" nillable="true" type="q58:ResultDocList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocListWithDivergencies">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q59:DocListRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocListWithDivergenciesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="GetDocListWithDivergenciesResult" nillable="true" type="q60:ResultDocList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditDocID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q61="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q61:DocRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditDocIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="EditDocIDResult" nillable="true" type="q62:ResultDocRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListContainerMovements">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q63="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q63:ContainerRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListContainerMovementsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="ListContainerMovementsResult" nillable="true" type="q64:ResultContainer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateProductionStockMovement">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q65="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="movType" type="q65:ContainerRequest.eMovType" />
+        <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q66:ContainerRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateProductionStockMovementResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="CreateProductionStockMovementResult" nillable="true" type="q67:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TransferStockToNewContainer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="request" nillable="true" type="q68:ContainerRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TransferStockToNewContainerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" minOccurs="0" name="TransferStockToNewContainerResult" nillable="true" type="q69:Result" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

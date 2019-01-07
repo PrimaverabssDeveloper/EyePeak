@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FB26596E-8CA6-4655-8EE4-82239FA5D184}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Sync.WMS</RootNamespace>
+    <AssemblyName>Sync.WMS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Documents.cs" />
+    <Compile Include="Company.cs" />
+    <Compile Include="Container.cs" />
+    <Compile Include="Operators.cs" />
+    <Compile Include="Stocks.cs" />
+    <Compile Include="SKUClass.cs" />
+    <Compile Include="SKUGroup.cs" />
+    <Compile Include="DocDefinition.cs" />
+    <Compile Include="SKU.cs" />
+    <Compile Include="Connected Services\WMSDataImportWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Warehouse.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="FormSyncWMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSyncWMS.Designer.cs">
+      <DependentUpon>FormSyncWMS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils.cs" />
+    <EmbeddedResource Include="FormSyncWMS.resx">
+      <DependentUpon>FormSyncWMS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Connected Services\WMSDataImportWS\Sync.WMS.WMSDataImportWS.Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WMSDataImportWS\Sync.WMS.WMSDataImportWS.ResultContainer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WMSDataImportWS\Sync.WMS.WMSDataImportWS.ResultDocList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WMSDataImportWS\Sync.WMS.WMSDataImportWS.ResultDocRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WMSDataImportWS\Sync.WMS.WMSDataImportWS.ResultStock.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WMSDataImportWS\WMSDataImport.wsdl" />
+    <None Include="Connected Services\WMSDataImportWS\WMSDataImport.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WMSDataImportWS\WMSDataImport1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WMSDataImportWS\WMSDataImport2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WMSDataImportWS\WMSDataImport3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WMSDataImportWS\WMSDataImport4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WMSDataImportWS\WMSDataImport5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\WMSDataImportWS\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WMSDataImportWS\WMSDataImport.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WMSDataImportWS\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WMSDataImportWS\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WMSDataImportWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

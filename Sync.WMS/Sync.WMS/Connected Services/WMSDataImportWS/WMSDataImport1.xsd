@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Response" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://amacedo:9999/WMSDataImport?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://amacedo:9999/WMSDataImport?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/GlobalSist.Logic.DocLogic" />
+  <xs:import schemaLocation="http://amacedo:9999/WMSDataImport?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" />
+  <xs:complexType name="Result">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AdditionalReturnValues" nillable="true" type="q1:ArrayOfKeyValueOfstringstring" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Handled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RecordKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Succedded" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Result" nillable="true" type="tns:Result" />
+  <xs:complexType name="ResultStock">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Handled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Stock" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Succedded" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultStock" nillable="true" type="tns:ResultStock" />
+  <xs:complexType name="ResultDocList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Docs" nillable="true" type="tns:ArrayOfResultDoc" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Handled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Succedded" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultDocList" nillable="true" type="tns:ResultDocList" />
+  <xs:complexType name="ArrayOfResultDoc">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResultDoc" nillable="true" type="tns:ResultDoc" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResultDoc" nillable="true" type="tns:ArrayOfResultDoc" />
+  <xs:complexType name="ResultDoc">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DocDetails" nillable="true" type="tns:ArrayOfResultDocDetail" />
+      <xs:element minOccurs="0" name="DocID" type="xs:int" />
+      <xs:element minOccurs="0" name="DocNum" type="xs:int" />
+      <xs:element minOccurs="0" name="DocSeries" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/GlobalSist.Logic.DocLogic" minOccurs="0" name="DocStatus" type="q2:DocStatusEnum" />
+      <xs:element minOccurs="0" name="ERPDocID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ERPDocNum" type="xs:int" />
+      <xs:element minOccurs="0" name="ERPDocSeries" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EntityName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultDoc" nillable="true" type="tns:ResultDoc" />
+  <xs:complexType name="ArrayOfResultDocDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResultDocDetail" nillable="true" type="tns:ResultDocDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResultDocDetail" nillable="true" type="tns:ArrayOfResultDocDetail" />
+  <xs:complexType name="ResultDocDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BatchCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConfirmedQty" type="xs:decimal" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="OriginContainerCodes" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Qty" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SKUCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultDocDetail" nillable="true" type="tns:ResultDocDetail" />
+  <xs:complexType name="ResultDocRequest">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/GlobalSist.Server.WMS.WCF.Request" minOccurs="0" name="Doc" nillable="true" type="q4:DocRequest" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Handled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Succedded" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultDocRequest" nillable="true" type="tns:ResultDocRequest" />
+  <xs:complexType name="ResultContainer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContainerMovsDetailList" nillable="true" type="tns:ArrayOfContainerMovsDetail" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Handled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Succedded" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultContainer" nillable="true" type="tns:ResultContainer" />
+  <xs:complexType name="ArrayOfContainerMovsDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContainerMovsDetail" nillable="true" type="tns:ContainerMovsDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContainerMovsDetail" nillable="true" type="tns:ArrayOfContainerMovsDetail" />
+  <xs:complexType name="ContainerMovsDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChangeDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DestinyContainerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DestinyLogicalGroupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DestinyPhysicalGroupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OriginalContainerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OriginalLogicalGroupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OriginalPhysicalGroupCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContainerMovsDetail" nillable="true" type="tns:ContainerMovsDetail" />
+</xs:schema>

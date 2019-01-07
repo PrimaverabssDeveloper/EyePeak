@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GlobalSist.Logic.DocLogic" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GlobalSist.Logic.DocLogic" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="DocTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CLI_ORDER" />
+      <xs:enumeration value="CLI_DEV_ORDER" />
+      <xs:enumeration value="CLI_OUT" />
+      <xs:enumeration value="CLI_DEV" />
+      <xs:enumeration value="SUP_ORDER" />
+      <xs:enumeration value="SUP_DEV_ORDER" />
+      <xs:enumeration value="SUP_IN" />
+      <xs:enumeration value="SUP_DEV" />
+      <xs:enumeration value="PROD_ORDER" />
+      <xs:enumeration value="PROD_IN" />
+      <xs:enumeration value="PROD_OUT" />
+      <xs:enumeration value="INVENTORY" />
+      <xs:enumeration value="TRANSFER" />
+      <xs:enumeration value="STK_OUT" />
+      <xs:enumeration value="STK_IN" />
+      <xs:enumeration value="REPLENISH" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DocTypeEnum" nillable="true" type="tns:DocTypeEnum" />
+  <xs:simpleType name="DocStatusEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PENDING" />
+      <xs:enumeration value="START" />
+      <xs:enumeration value="TOCONFIRM" />
+      <xs:enumeration value="CLOSED" />
+      <xs:enumeration value="CANCEL" />
+      <xs:enumeration value="EXPORT" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DocStatusEnum" nillable="true" type="tns:DocStatusEnum" />
+</xs:schema>

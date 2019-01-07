@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4d8d40ea-ca9d-43fe-85ab-6aec7e8d250b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:9999/WMSDataImport" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WMSDataImport.xsd" MetadataType="Schema" ID="13ec7523-b59f-4591-b20a-0d90ae4b1706" SourceId="1" SourceUrl="http://amacedo:9999/WMSDataImport?xsd=xsd2" />
+    <MetadataFile FileName="WMSDataImport1.xsd" MetadataType="Schema" ID="e5152914-6f00-4ea5-b277-9233ffeb9c62" SourceId="1" SourceUrl="http://amacedo:9999/WMSDataImport?xsd=xsd3" />
+    <MetadataFile FileName="WMSDataImport2.xsd" MetadataType="Schema" ID="819de581-6699-4320-8ea5-9b015eaae586" SourceId="1" SourceUrl="http://amacedo:9999/WMSDataImport?xsd=xsd0" />
+    <MetadataFile FileName="WMSDataImport.wsdl" MetadataType="Wsdl" ID="92ce7091-55c7-4c6b-a855-a8506d34df41" SourceId="1" SourceUrl="http://amacedo:9999/WMSDataImport?wsdl" />
+    <MetadataFile FileName="WMSDataImport.disco" MetadataType="Disco" ID="6aba36b4-584c-4e39-b590-0632a01c019d" SourceId="1" SourceUrl="http://amacedo:9999/WMSDataImport?disco" />
+    <MetadataFile FileName="WMSDataImport3.xsd" MetadataType="Schema" ID="bde010d4-a2fc-4453-87a6-9b0b368c6ab2" SourceId="1" SourceUrl="http://amacedo:9999/WMSDataImport?xsd=xsd4" />
+    <MetadataFile FileName="WMSDataImport4.xsd" MetadataType="Schema" ID="262a0204-d661-488b-a207-1426bc42913e" SourceId="1" SourceUrl="http://amacedo:9999/WMSDataImport?xsd=xsd5" />
+    <MetadataFile FileName="WMSDataImport5.xsd" MetadataType="Schema" ID="225a6a51-afd7-4ee4-bb98-52b42df6fc45" SourceId="1" SourceUrl="http://amacedo:9999/WMSDataImport?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
