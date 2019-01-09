@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabelExtention", "LabelExtention\LabelExtention.csproj", "{FB321B14-5C82-4391-986F-EA6B39D3D9F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB321B14-5C82-4391-986F-EA6B39D3D9F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB321B14-5C82-4391-986F-EA6B39D3D9F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB321B14-5C82-4391-986F-EA6B39D3D9F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB321B14-5C82-4391-986F-EA6B39D3D9F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1EF6BF53-4818-4CE8-A486-3D4C31FD147F}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.primaverabss.com/tfs/p.tec.teams
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = LabelExtention\\LabelExtention.csproj
+		SccProjectName1 = LabelExtention
+		SccLocalPath1 = LabelExtention
+	EndGlobalSection
+EndGlobal
