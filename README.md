@@ -10,7 +10,7 @@ PRIMAVERA Eye Peak is a solution that runs on Windows plataform, witch is develo
 ### Eye Peak webservices requirements?
 To start developing a Eye Peak Solution on webservices with Visual Studio you need:
 1. Reference to .NET Framework 4.
-2. Add to your project a web reference to Eye Peak webservices (Http:\\Localhost:9999\WMSDataImport).
+2. Add to your project a web reference to Eye Peak webservices (Http:\\\Localhost:9999\WMSDataImport).
 3. Finally you can start coding your project.
 
 ### Eye Peak extensibility requirements?
